@@ -21,6 +21,10 @@ public class GameController : MonoBehaviour
     public int oPlayersScore;
     public Text xPlayersScoreText;
     public Text oPlayersScoreText;
+    public Button xPlayersButton;
+    public Button oPlayersButton;
+    public AudioSource buttonClickAudio;
+    public AudioSource ClickAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +58,8 @@ public class GameController : MonoBehaviour
 
     public void TicTacToeButton(int WichNumber)
     {
+        xPlayersButton.interactable = false;
+        oPlayersButton.interactable = false;
         tictactoeSpaces[WichNumber].image.sprite = playerIcons[whoTurn];
         tictactoeSpaces[WichNumber].interactable = false;
 
@@ -133,6 +139,8 @@ public class GameController : MonoBehaviour
             winningLine[i].SetActive(false);
         }
         winnerPanel.SetActive(false);
+        xPlayersButton.interactable = true;
+        oPlayersButton.interactable = true;
     }
 
     public void Restart()
@@ -142,5 +150,30 @@ public class GameController : MonoBehaviour
         oPlayersScore = 0;
         xPlayersScoreText.text = "0";
         oPlayersScoreText.text = "0";
+    }
+
+    public void SwitchPlayer(int whichPlayer)
+    {
+        if(whichPlayer == 0)
+        {
+            whoTurn = 0;
+            turnIcons[0].SetActive(true);
+            turnIcons[1].SetActive(false);
+        }
+        else if(whichPlayer == 1)
+        {
+            whoTurn = 1;
+            turnIcons[1].SetActive(true);
+            turnIcons[0].SetActive(false);
+        }
+    }
+
+    public void PlayButtonClick()
+    {
+        buttonClickAudio.Play();
+    }
+    public void PlayClick()
+    {
+        ClickAudio.Play();
     }
 }
