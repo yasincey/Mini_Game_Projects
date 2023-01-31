@@ -664,11 +664,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: a9246f65-fc93-43d3-a4ed-797ed68f2c34
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Tic_Tac_Toe
+  organizationId: thegomezmc_tr
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
