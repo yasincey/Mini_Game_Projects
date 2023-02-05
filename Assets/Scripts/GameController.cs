@@ -133,7 +133,21 @@ public class GameController : MonoBehaviour
 
     public void Rematch()
     {
+        int p_turn;
+        p_turn = whoTurn;
         GameSetup();
+        if (p_turn == 0 && gameIsRun)
+        {
+            whoTurn = 1;
+            turnIcons[0].SetActive(false);
+            turnIcons[1].SetActive(true);
+        }
+        else if (p_turn == 1 && gameIsRun)
+        {
+            whoTurn = 0;
+            turnIcons[0].SetActive(true);
+            turnIcons[1].SetActive(false);
+        }
         for (int i = 0; i < winningLine.Length; i++)
         {
             winningLine[i].SetActive(false);
